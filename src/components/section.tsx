@@ -5,7 +5,7 @@ type Props = {
 
 const Section = ({ heading, children }: Props) => {
   return (
-    <section className="my-16 flex flex-col gap-4">
+    <section className="my-20 flex flex-col gap-4">
       <h2 className="">{heading}</h2>
       {children}
     </section>

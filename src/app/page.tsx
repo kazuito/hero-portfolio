@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <main>
       <div className="mx-auto max-w-3xl px-4 py-12">
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-5">
           <Avatar
             src="https://img.heroui.chat/image/avatar?w=200&h=200&u=a"
             size="lg"
