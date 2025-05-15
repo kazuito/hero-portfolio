@@ -5,7 +5,7 @@ type Props = {};
 
 const Footer = ({}: Props) => {
   return (
-    <footer className="flex mt-16">
+    <footer className="mt-16 flex">
       <div className="text-default-400 flex w-fit flex-col gap-1 text-sm">
         <p>All of the contents on this page are sample for demonstrating.</p>
         <p className="flex gap-1">

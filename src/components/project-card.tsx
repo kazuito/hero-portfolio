@@ -28,7 +28,7 @@ const ProjectCard = ({ project }: Props) => {
           <div className="w-fit rounded-tr-lg pt-1 pr-3 pb-0 pl-0 text-sm">
             {project.title}
           </div>
-          <div className="text-xs text-primary">{project.category}</div>
+          <div className="text-primary text-xs">{project.category}</div>
         </div>
         <div className="text-default-500 group-hover/card:text-default-700 mt-1 text-sm transition">
           {project.description}
