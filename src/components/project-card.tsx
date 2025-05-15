@@ -27,27 +27,19 @@ const ProjectCard = ({ project }: Props) => {
   return (
     <>
       <button
-        className="w-full flex flex-col text-start cursor-pointer group/card rounded-xl"
+        className="w-full flex group/card flex-col text-start cursor-pointer rounded-lg py-3 px-4 -my-3 -mx-4 hover:bg-default-50 transition-colors"
         onClick={onOpen}
       >
-        <div className="w-full h-40 overflow-clip rounded-2xl">
-          <Image
-            src={project.images[0]}
-            className="group-hover/card:scale-105 transition-all"
-          />
+        <div className="flex justify-between items-center">
+          <div className="text-sm pl-0 pr-3 pb-0 pt-1 w-fit rounded-tr-lg">
+            {project.title}
+          </div>
+          <div className="text-blue-500 text-xs">
+            {project.category}
+          </div>
         </div>
-        <div className="p-1">
-          <div className="flex justify-between items-center">
-            <div className="text-sm bg-background pl-0 pr-3 pb-0 pt-1 w-fit rounded-tr-lg">
-              {project.title}
-            </div>
-            <Chip size="sm" color="primary" variant="light">
-              {project.category}
-            </Chip>
-          </div>
-          <div className="text-sm text-default-500 mt-1">
-            {project.description}
-          </div>
+        <div className="text-sm text-default-500 mt-1 group-hover/card:text-default-700 transition">
+          {project.description}
         </div>
       </button>
       <Modal size="xl" isOpen={isOpen} onOpenChange={onOpenChange}>

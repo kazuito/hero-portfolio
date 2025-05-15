@@ -11,7 +11,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div>
+    <main>
       <div className="max-w-3xl mx-auto px-4 py-12">
         <div className="flex gap-4 items-center">
           <Avatar
@@ -40,7 +40,7 @@ export default function Home() {
           </p>
         </Section>
         <Section heading="Projects">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-3 gap-y-8">
             {projects.map((project, i) => {
               return <ProjectCard project={project} key={i} />;
             })}
@@ -54,6 +54,6 @@ export default function Home() {
         </div>
         <Footer />
       </div>
-    </div>
+    </main>
   );
 }

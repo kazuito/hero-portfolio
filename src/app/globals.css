@@ -3,3 +3,11 @@
 
 @source '../../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
 @custom-variant dark (&:is(.dark *));
+
+main {
+  @apply relative;
+}
+main::after {
+  @apply absolute top-0 z-[-1] content-[""] opacity-2 h-full w-full;
+  background-image: url("../../public/grid.svg");
+}
