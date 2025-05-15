@@ -12,8 +12,8 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main>
-      <div className="sticky top-0 z-20 h-12 w-full backdrop-blur-[1px] mask-b-to-100% bg-gradient-to-b from-background/50"></div>
-      <div className="mx-auto max-w-3xl px-6">
+      <div className="from-background/50 fixed top-0 z-20 h-12 w-full bg-gradient-to-b mask-b-to-100% backdrop-blur-[1px]"></div>
+      <div className="mx-auto max-w-3xl px-6 py-12">
         <div className="flex items-center gap-4 sm:gap-5">
           <Avatar
             src="https://img.heroui.chat/image/avatar?w=200&h=200&u=a"
@@ -54,7 +54,12 @@ export default function Home() {
               <p className="text-default-500 text-sm/tight">
                 My knowledge about product design, once a month. No spam.
               </p>
-              <Button size="sm" color="primary" variant="flat" className="shrink-0">
+              <Button
+                size="sm"
+                color="primary"
+                variant="flat"
+                className="shrink-0"
+              >
                 Subscribe
               </Button>
             </div>
