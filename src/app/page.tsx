@@ -54,7 +54,7 @@ export default function Home() {
               <p className="text-default-500 text-sm/tight">
                 My knowledge about product design, once a month. No spam.
               </p>
-              <Button size="sm" color="primary" variant="flat">
+              <Button size="sm" color="primary" variant="flat" className="shrink-0">
                 Subscribe
               </Button>
             </div>
