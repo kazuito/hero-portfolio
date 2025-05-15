@@ -12,7 +12,8 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main>
-      <div className="mx-auto max-w-3xl px-6 py-12">
+      <div className="sticky top-0 z-20 h-12 w-full backdrop-blur-[1px] mask-b-to-100% bg-gradient-to-b from-background/50"></div>
+      <div className="mx-auto max-w-3xl px-6">
         <div className="flex items-center gap-4 sm:gap-5">
           <Avatar
             src="https://img.heroui.chat/image/avatar?w=200&h=200&u=a"
