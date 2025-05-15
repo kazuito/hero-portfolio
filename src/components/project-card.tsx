@@ -34,7 +34,12 @@ const ProjectCard = ({ project }: Props) => {
           {project.description}
         </div>
       </button>
-      <Modal size="xl" isOpen={isOpen} onOpenChange={onOpenChange}>
+      <Modal
+        size="3xl"
+        scrollBehavior="outside"
+        isOpen={isOpen}
+        onOpenChange={onOpenChange}
+      >
         <ModalContent>
           <ModalHeader className="flex flex-col">
             <div className="text-base/tight">{project.title}</div>
@@ -43,24 +48,19 @@ const ProjectCard = ({ project }: Props) => {
             </div>
           </ModalHeader>
           <ModalBody className="pt-0">
-            <div className="-mx-4">
-              <ScrollShadow
-                orientation="horizontal"
-                className="flex gap-2 overflow-x-auto px-4"
-              >
-                {project.images.map((image, index) => {
-                  return (
-                    <Image
-                      key={index}
-                      src={image}
-                      className="h-60 w-full"
-                      classNames={{
-                        wrapper: "shrink-0",
-                      }}
-                    />
-                  );
-                })}
-              </ScrollShadow>
+            <div className="flex flex-col gap-4">
+              {project.images.map((image, index) => {
+                return (
+                  <Image
+                    key={index}
+                    src={image}
+                    className="w-full"
+                    classNames={{
+                      wrapper: "shrink-0",
+                    }}
+                  />
+                );
+              })}
             </div>
           </ModalBody>
         </ModalContent>
