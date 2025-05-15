@@ -2,10 +2,6 @@
 
 import { type Project } from "@/lib/projects";
 import {
-  Card,
-  CardBody,
-  CardFooter,
-  Chip,
   Image,
   Modal,
   ModalBody,
@@ -14,8 +10,6 @@ import {
   ScrollShadow,
   useDisclosure,
 } from "@heroui/react";
-import NextImage from "next/image";
-import { useState } from "react";
 
 type Props = {
   project: Project;
@@ -27,18 +21,16 @@ const ProjectCard = ({ project }: Props) => {
   return (
     <>
       <button
-        className="w-full flex group/card flex-col text-start cursor-pointer rounded-lg py-3 px-4 -my-3 -mx-4 hover:bg-default-50 transition-colors"
+        className="group/card hover:bg-default-50 -mx-4 -my-3 flex w-full cursor-pointer flex-col rounded-lg px-4 py-3 text-start transition-colors"
         onClick={onOpen}
       >
-        <div className="flex justify-between items-center">
-          <div className="text-sm pl-0 pr-3 pb-0 pt-1 w-fit rounded-tr-lg">
+        <div className="flex items-center justify-between">
+          <div className="w-fit rounded-tr-lg pt-1 pr-3 pb-0 pl-0 text-sm">
             {project.title}
           </div>
-          <div className="text-blue-500 text-xs">
-            {project.category}
-          </div>
+          <div className="text-xs text-blue-500">{project.category}</div>
         </div>
-        <div className="text-sm text-default-500 mt-1 group-hover/card:text-default-700 transition">
+        <div className="text-default-500 group-hover/card:text-default-700 mt-1 text-sm transition">
           {project.description}
         </div>
       </button>
@@ -46,7 +38,7 @@ const ProjectCard = ({ project }: Props) => {
         <ModalContent>
           <ModalHeader className="flex flex-col">
             <div className="text-base/tight">{project.title}</div>
-            <div className="text-sm/tight font-normal text-default-500 mt-1">
+            <div className="text-default-500 mt-1 text-sm/tight font-normal">
               {project.description}
             </div>
           </ModalHeader>
@@ -61,7 +53,7 @@ const ProjectCard = ({ project }: Props) => {
                     <Image
                       key={index}
                       src={image}
-                      className="w-full h-60"
+                      className="h-60 w-full"
                       classNames={{
                         wrapper: "shrink-0",
                       }}

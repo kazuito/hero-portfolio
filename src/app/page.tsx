@@ -12,21 +12,21 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main>
-      <div className="max-w-3xl mx-auto px-4 py-12">
-        <div className="flex gap-4 items-center">
+      <div className="mx-auto max-w-3xl px-4 py-12">
+        <div className="flex items-center gap-4">
           <Avatar
             src="https://img.heroui.chat/image/avatar?w=200&h=200&u=a"
             size="lg"
           />
           <div>
-            <Link href="/" className="font-semibold text-base/tight">
+            <Link href="/" className="text-base/tight font-semibold">
               Alex Morgan
             </Link>
             <div className="text-default-500 text-sm/tight">
               Product Designer
             </div>
           </div>
-          <div className="flex ml-auto text-sm gap-4">
+          <div className="ml-auto flex gap-4 text-sm">
             <ExternalLink href="#">X</ExternalLink>
             <ExternalLink href="#">GitHub</ExternalLink>
           </div>
@@ -40,7 +40,7 @@ export default function Home() {
           </p>
         </Section>
         <Section heading="Projects">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-3 gap-y-8">
+          <div className="grid grid-cols-1 gap-x-3 gap-y-8 sm:grid-cols-2 md:grid-cols-3">
             {projects.map((project, i) => {
               return <ProjectCard project={project} key={i} />;
             })}

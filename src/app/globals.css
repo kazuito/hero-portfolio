@@ -8,6 +8,6 @@ main {
   @apply relative;
 }
 main::after {
-  @apply absolute top-0 z-[-1] content-[""] opacity-2 h-full w-full;
+  @apply absolute top-0 z-[-1] h-full w-full opacity-2 content-[""];
   background-image: url("../../public/grid.svg");
 }
