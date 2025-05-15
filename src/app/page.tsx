@@ -6,7 +6,7 @@ import Footer from "@/components/footer";
 import ProjectCard from "@/components/project-card";
 import Section from "@/components/section";
 import { projects } from "@/lib/projects";
-import { Avatar } from "@heroui/react";
+import { Avatar, Button, Input } from "@heroui/react";
 import Link from "next/link";
 
 export default function Home() {
@@ -40,10 +40,21 @@ export default function Home() {
           </p>
         </Section>
         <Section heading="Projects">
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 -m-3">
+          <div className="-m-3 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
             {projects.map((project, i) => {
               return <ProjectCard project={project} key={i} />;
             })}
+          </div>
+        </Section>
+        <Section heading="Newsletter">
+          <div className="">
+            <Input size="sm" label="Email" />
+            <div className="mt-4 flex items-center justify-end gap-4">
+              <p className="text-default-500 text-sm/tight">My knowledge about product design, once a month. No spam.</p>
+              <Button size="sm" color="primary" variant="flat">
+                Subscribe
+              </Button>
+            </div>
           </div>
         </Section>
         <div className="my-10">
