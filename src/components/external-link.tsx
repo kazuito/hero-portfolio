@@ -7,7 +7,10 @@ type Props = React.ComponentProps<typeof Link>;
 const ExternalLink = ({ className, children, ...props }: Props) => {
   return (
     <Link
-      className={cn("group/link flex items-center gap-1", className)}
+      className={cn(
+        "group/link flex items-center gap-1 transition-colors",
+        className,
+      )}
       target="_blank"
       {...props}
     >
