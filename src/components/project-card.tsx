@@ -21,7 +21,7 @@ const ProjectCard = ({ project }: Props) => {
   return (
     <>
       <button
-        className="group/card hover:bg-default-50 -mx-4 -my-3 flex w-full cursor-pointer flex-col rounded-lg px-4 py-3 text-start transition-colors"
+        className="group/card hover:bg-default-50 -m- flex w-full cursor-pointer flex-col rounded-lg p-3 text-start transition-colors"
         onClick={onOpen}
       >
         <div className="flex items-center justify-between">
