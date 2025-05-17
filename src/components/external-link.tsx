@@ -1,17 +1,20 @@
-import { cn } from "@heroui/react";
+import { cn, Link } from "@heroui/react";
 import { ArrowUpRightIcon } from "lucide-react";
-import Link from "next/link";
+import NextLink from "next/link";
 
 type Props = React.ComponentProps<typeof Link>;
 
 const ExternalLink = ({ className, children, ...props }: Props) => {
   return (
     <Link
+      as={NextLink}
       className={cn(
         "group/link flex items-center gap-1 transition-colors",
         className,
       )}
       target="_blank"
+      size="sm"
+      color="foreground"
       {...props}
     >
       {children}
