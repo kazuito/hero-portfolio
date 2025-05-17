@@ -8,15 +8,9 @@ import {
   ScrollShadow,
   Spinner,
 } from "@heroui/react";
-import Section from "./section";
-import {
-  PlusIcon,
-  SendHorizontalIcon,
-  SendIcon,
-  SquarePenIcon,
-  SquarePlusIcon,
-} from "lucide-react";
+import { SendHorizontalIcon } from "lucide-react";
 import { useState } from "react";
+import Section from "./section";
 
 type Props = {};
 
@@ -70,7 +64,7 @@ const AiChatSection = ({}: Props) => {
                 >
                   <div
                     className={cn(
-                      "max-w-2/3 rounded-lg px-4 py-2 text-sm duration-320 starting:translate-y-4 starting:scale-98 starting:opacity-0",
+                      "max-w-2/3 rounded-lg px-4 py-2 text-sm duration-320 starting:translate-y-4 starting:scale-99 starting:opacity-0 starting:blur-sm",
                       chat.role === "user"
                         ? "bg-primary-100 text-primary-800"
                         : "bg-default-100 text-default-800",
