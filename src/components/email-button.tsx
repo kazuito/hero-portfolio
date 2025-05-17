@@ -14,12 +14,11 @@ const EmailButton = () => {
       title: "Email copied to clipboard.",
       color: "success",
       timeout: 2000,
-      // shouldShowTimeoutProgress: true,
       classNames: {
         title: "text-foreground",
         base: "bg-background border-none",
-        icon: "text-primary"
-      }
+        icon: "text-primary",
+      },
     });
     setTimeout(() => {
       setEmailCopied(false);

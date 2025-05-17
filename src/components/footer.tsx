@@ -1,9 +1,6 @@
-import Link from "next/link";
 import ExternalLink from "./external-link";
 
-type Props = {};
-
-const Footer = ({}: Props) => {
+const Footer = () => {
   return (
     <footer className="mt-16 flex">
       <div className="text-default-400 flex w-fit flex-col gap-1 text-sm">

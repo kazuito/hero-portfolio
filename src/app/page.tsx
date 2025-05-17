@@ -6,30 +6,20 @@ import EmailButton from "@/components/email-button";
 import ExternalLink from "@/components/external-link";
 import Footer from "@/components/footer";
 import NewsletterSection from "@/components/newsletter-section";
-import ProjectCard from "@/components/project-card";
 import ProjectsSection from "@/components/projects-section";
-import Section from "@/components/section";
 import WritingsSection from "@/components/writings-section";
 import { projects } from "@/lib/projects";
 import {
   Avatar,
   Button,
-  cn,
   Image,
   Modal,
   ModalBody,
   ModalContent,
   ModalHeader,
-  Tab,
-  Tabs,
   useDisclosure,
 } from "@heroui/react";
-import {
-  CheckIcon,
-  ChevronLeftIcon,
-  ChevronRightIcon,
-  CopyIcon,
-} from "lucide-react";
+import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 import NextLink from "next/link";
 import { useState } from "react";
 
@@ -97,6 +87,7 @@ export default function Home() {
                   <Image
                     key={index}
                     src={image}
+                    alt={`Project image ${index + 1}`}
                     className="w-full rounded-none"
                     classNames={{
                       wrapper: "shrink-0",

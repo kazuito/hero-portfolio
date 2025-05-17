@@ -2,9 +2,7 @@ import { Button, Input, Textarea } from "@heroui/react";
 import { ForwardIcon } from "lucide-react";
 import Section from "./section";
 
-type Props = {};
-
-const ContactSection = ({}: Props) => {
+const ContactSection = () => {
   return (
     <Section heading="Contact">
       <div className="flex flex-col gap-2">
