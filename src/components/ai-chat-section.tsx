@@ -35,7 +35,7 @@ const AiChatSection = ({}: Props) => {
     },
     {
       role: "assistant",
-      content: "My name is John Doe.",
+      content: "My name is Alex Morgan.",
     },
   ]);
 
@@ -62,7 +62,7 @@ const AiChatSection = ({}: Props) => {
     setTimeout(() => {
       const aiResponse = {
         role: "assistant",
-        content: `Hi! I'm Jon Doe. How can I help you today?`,
+        content: `Hi! I'm Alex Morgan. How can I help you today?`,
       };
       setChats((prevChats) => [...prevChats, aiResponse]);
       setThinking(false);
