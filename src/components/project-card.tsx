@@ -1,7 +1,7 @@
 "use client";
 
 import { type Project } from "@/lib/projects";
-import { Card, CardBody, CardHeader, Chip, Image } from "@heroui/react";
+import { Card, CardBody, CardHeader, Chip } from "@heroui/react";
 
 type Props = {
   project: Project;
@@ -13,6 +13,7 @@ const ProjectCard = ({ project, onClick }: Props) => {
     <Card onClick={onClick} isPressable className="!transition-all">
       <CardHeader className="h-40 w-full p-2 md:aspect-square">
         <img
+          alt={project.title}
           src={project.images[0]}
           className="h-full w-full rounded-xl object-cover"
         />

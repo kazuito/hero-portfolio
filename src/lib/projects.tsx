@@ -9,10 +9,7 @@ export const projects: Project[] = [
   {
     title: "White Rect Cap",
     description: "A minimal design for real world product.",
-    images: [
-      "cap1.png",
-      "cap2.png"
-    ],
+    images: ["./cap1.png", "./cap2.png"],
     category: "Web",
   },
   {

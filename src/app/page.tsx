@@ -16,10 +16,9 @@ import {
   Modal,
   ModalBody,
   ModalContent,
-  ModalHeader,
   useDisclosure,
 } from "@heroui/react";
-import { ChevronLeftIcon, ChevronRightIcon, XIcon } from "lucide-react";
+import { XIcon } from "lucide-react";
 import NextLink from "next/link";
 import { useState } from "react";
 
@@ -73,35 +72,38 @@ export default function Home() {
         hideCloseButton
       >
         <ModalContent className="m-0 h-[100dvh] max-h-none rounded-none shadow-none">
-          <ModalBody className="relative my-0 gap-0 p-0">
-            <div className="backdrop-blu sticky top-4 z-20 mx-8 my-12 flex items-center justify-between rounded-2xl text-white mix-blend-difference">
-              <div className="text-base">{activeProject.title}</div>
-              <div>
-                <Button
-                  isIconOnly
-                  variant="bordered"
-                  className="text-background border-background/10"
-                >
-                  <XIcon size={16} />
-                </Button>
+          {(close) => (
+            <ModalBody className="relative my-0 gap-0 p-0">
+              <div className="backdrop-blu sticky top-4 z-20 mx-8 my-12 flex items-center justify-between rounded-2xl text-white mix-blend-difference">
+                <div className="text-base">{activeProject.title}</div>
+                <div>
+                  <Button
+                    isIconOnly
+                    variant="bordered"
+                    className="text-background border-background/10"
+                    onPress={close}
+                  >
+                    <XIcon size={16} />
+                  </Button>
+                </div>
               </div>
-            </div>
-            <div className="flex flex-col gap-0.5">
-              {activeProject.images.map((image, index) => {
-                return (
-                  <Image
-                    key={index}
-                    src={image}
-                    alt={`Project image ${index + 1}`}
-                    className="w-full rounded-none"
-                    classNames={{
-                      wrapper: "shrink-0",
-                    }}
-                  />
-                );
-              })}
-            </div>
-          </ModalBody>
+              <div className="flex flex-col gap-0.5">
+                {activeProject.images.map((image, index) => {
+                  return (
+                    <Image
+                      key={index}
+                      src={image}
+                      alt={`Project image ${index + 1}`}
+                      className="w-full rounded-none"
+                      classNames={{
+                        wrapper: "shrink-0",
+                      }}
+                    />
+                  );
+                })}
+              </div>
+            </ModalBody>
+          )}
         </ModalContent>
       </Modal>
     </main>
