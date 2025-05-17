@@ -38,7 +38,7 @@ export const projects: Project[] = [
     description:
       "Interactive charts and graphs to present complex data in an accessible format.",
     images: ["https://img.heroui.chat/image/ai?w=800&h=600&u=90"],
-    category: "Data",
+    category: "Mobile",
   },
   {
     title: "AI Image Generator",
@@ -48,6 +48,6 @@ export const projects: Project[] = [
       "https://img.heroui.chat/image/ai?w=800&h=600&u=63",
       "https://img.heroui.chat/image/ai?w=800&h=600&u=2",
     ],
-    category: "AI",
+    category: "Web",
   },
 ];
