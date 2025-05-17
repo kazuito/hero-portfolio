@@ -124,7 +124,7 @@ export default function Home() {
               return (
                 <ProjectCard
                   project={project}
-                  key={i}
+                  key={project.title}
                   onClick={() => {
                     setActiveProjectIndex(i);
                     onOpen();

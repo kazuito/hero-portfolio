@@ -19,7 +19,7 @@ type Props = {
 const ProjectCard = ({ project, onClick }: Props) => {
   return (
     <button
-      className="group/card hover:bg-default-50 -m- flex w-full cursor-pointer flex-col rounded-lg p-3 text-start transition-colors"
+      className="group/card hover:bg-default-50 -m- flex w-full cursor-pointer flex-col rounded-lg p-3 text-start starting:opacity-0 transition"
       onClick={onClick}
     >
       <div className="flex items-center justify-between">
