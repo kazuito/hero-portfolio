@@ -17,6 +17,7 @@ import {
   ModalContent,
   useDisclosure,
   ButtonGroup,
+  ModalHeader,
 } from "@heroui/react";
 import {
   ArrowLeftIcon,
@@ -149,16 +150,20 @@ export default function Home() {
         isOpen={isOpen}
         onOpenChange={onOpenChange}
         size="3xl"
+        backdrop="transparent"
+        className="!m-0"
       >
-        <ModalContent className="h-[90dvh] overflow-clip">
-          <ModalBody className="gap-0 p-0">
-            <div className="p-6 font-normal">
+        <ModalContent className="m-0 h-[100dvh] max-h-none rounded-none shadow-none">
+          <ModalHeader className="p-0">
+            <div className="p-6 font-normal md:px-0">
               <div className="text-base">{activeProject.title}</div>
               <div className="text-default-500 text-sm">
                 {activeProject.description}
               </div>
             </div>
-            <div className="flex flex-col gap-6">
+          </ModalHeader>
+          <ModalBody className="my-0 gap-0 p-0 relative">
+            <div className="flex flex-col gap-0.5">
               {activeProject.images.map((image, index) => {
                 return (
                   <Image
