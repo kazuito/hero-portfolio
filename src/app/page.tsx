@@ -1,6 +1,7 @@
 "use client";
 
 import AboutSection from "@/components/about-section";
+import AiChatSection from "@/components/ai-chat-section";
 import ContactSection from "@/components/contact-section";
 import EmailButton from "@/components/email-button";
 import ExternalLink from "@/components/external-link";
@@ -58,6 +59,7 @@ export default function Home() {
           }}
         />
         <WritingsSection />
+        <AiChatSection />
         <NewsletterSection />
         <ContactSection />
         <Footer />
