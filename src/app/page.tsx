@@ -96,34 +96,6 @@ export default function Home() {
                 );
               })}
             </div>
-            <div className="sticky bottom-0 z-20 flex justify-end p-2">
-              <div className="bg-background border-default-100 flex gap-1 rounded-xl border p-1 shadow">
-                <Button
-                  size="sm"
-                  isIconOnly
-                  variant="flat"
-                  isDisabled={activeProjectIndex === 0}
-                  onPress={() =>
-                    setActiveProjectIndex((prev) => Math.max(prev - 1, 0))
-                  }
-                >
-                  <ChevronLeftIcon size={16} />
-                </Button>
-                <Button
-                  size="sm"
-                  isIconOnly
-                  variant="flat"
-                  isDisabled={activeProjectIndex === projects.length - 1}
-                  onPress={() =>
-                    setActiveProjectIndex((prev) =>
-                      Math.min(prev + 1, projects.length - 1),
-                    )
-                  }
-                >
-                  <ChevronRightIcon size={16} />
-                </Button>
-              </div>
-            </div>
           </ModalBody>
         </ModalContent>
       </Modal>

@@ -7,12 +7,11 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: "Project One",
-    description: "This is the first project.",
+    title: "White Rect Cap",
+    description: "A minimal design for real world product.",
     images: [
-      "https://img.heroui.chat/image/ai?w=800&h=600&u=1",
-      "https://img.heroui.chat/image/ai?w=800&h=600&u=2",
-      "https://img.heroui.chat/image/ai?w=800&h=600&u=3",
+      "cap1.png",
+      "cap2.png"
     ],
     category: "Web",
   },
