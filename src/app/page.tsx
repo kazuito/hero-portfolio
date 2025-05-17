@@ -10,18 +10,17 @@ import {
   Avatar,
   Button,
   cn,
-  Input,
   Image,
+  Input,
   Modal,
   ModalBody,
   ModalContent,
-  useDisclosure,
-  ButtonGroup,
   ModalHeader,
+  Tab,
+  Tabs,
+  useDisclosure,
 } from "@heroui/react";
 import {
-  ArrowLeftIcon,
-  ArrowRightIcon,
   CheckIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
@@ -34,6 +33,13 @@ export default function Home() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
   const activeProject = projects[activeProjectIndex];
+
+  const [activeCategory, setActiveCategory] = useState("all");
+  const filteredProjects = projects.filter(
+    (project) =>
+      activeCategory === "all" ||
+      project.category.toLowerCase() === activeCategory.toLowerCase(),
+  );
 
   const [emailCopied, setEmailCopied] = useState(false);
 
@@ -103,9 +109,18 @@ export default function Home() {
             perferendis optio dolore. Nesciunt nihil sunt exercitationem veniam.
           </p>
         </Section>
-        <Section heading="Projects">
-          <div className="-m-3 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
-            {projects.map((project, i) => {
+        <Section
+          heading="Projects"
+          headerContent={
+            <Tabs selectedKey={activeCategory} onSelectionChange={(key) => setActiveCategory(key.toString())} size="sm" radius="full">
+              <Tab key="all" title="All"></Tab>
+              <Tab key="web" title="Web"></Tab>
+              <Tab key="mobile" title="Mobile"></Tab>
+            </Tabs>
+          }
+        >
+          <div className="-m-3 -mt-2 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+            {filteredProjects.map((project, i) => {
               return (
                 <ProjectCard
                   project={project}
@@ -162,7 +177,7 @@ export default function Home() {
               </div>
             </div>
           </ModalHeader>
-          <ModalBody className="my-0 gap-0 p-0 relative">
+          <ModalBody className="relative my-0 gap-0 p-0">
             <div className="flex flex-col gap-0.5">
               {activeProject.images.map((image, index) => {
                 return (
