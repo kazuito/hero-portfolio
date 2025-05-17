@@ -1,6 +1,6 @@
 "use client";
 
-import Contact from "@/components/contact";
+import ContactSection from "@/components/contact-section";
 import ExternalLink from "@/components/external-link";
 import Footer from "@/components/footer";
 import ProjectCard from "@/components/project-card";
@@ -195,12 +195,7 @@ export default function Home() {
             </div>
           </div>
         </Section>
-        <div className="my-10">
-          <h2>Contact</h2>
-          <div>
-            <Contact />
-          </div>
-        </div>
+        <ContactSection />
         <Footer />
       </div>
       <Modal

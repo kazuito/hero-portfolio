@@ -1,12 +1,13 @@
 import { Button, Input, Textarea } from "@heroui/react";
-import { CommandIcon, ForwardIcon } from "lucide-react";
+import { ForwardIcon } from "lucide-react";
+import Section from "./section";
 
 type Props = {};
 
-const Contact = ({}: Props) => {
+const ContactSection = ({}: Props) => {
   return (
-    <div className="mt-4">
-      <div className="mt-4 flex flex-col gap-2">
+    <Section heading="Contact">
+      <div className="flex flex-col gap-2">
         <Input label="Email" size="sm" />
         <Textarea label="Message" size="sm" />
         <div className="mt-2 flex items-center justify-end gap-4">
@@ -22,8 +23,8 @@ const Contact = ({}: Props) => {
           </Button>
         </div>
       </div>
-    </div>
+    </Section>
   );
 };
 
-export default Contact;
+export default ContactSection;
