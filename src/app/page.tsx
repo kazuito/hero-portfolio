@@ -20,14 +20,34 @@ import {
   Tabs,
   useDisclosure,
 } from "@heroui/react";
+import dayjs from "dayjs";
 import {
   CheckIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
   CopyIcon,
 } from "lucide-react";
-import Link from "next/link";
+import NextLink from "next/link";
+import { title } from "process";
 import { useState } from "react";
+
+const blogs = [
+  {
+    title: "Designing for Mobile First",
+    slug: "blog-3",
+    date: "2024-12-15",
+  },
+  {
+    title: "Building Accessible UIs",
+    slug: "blog-2",
+    date: "2025-4-8",
+  },
+  {
+    title: "Understanding Design Systems",
+    slug: "blog-1",
+    date: "2025-5-18",
+  },
+];
 
 export default function Home() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
@@ -63,9 +83,9 @@ export default function Home() {
             className="size-10 sm:size-12"
           />
           <div>
-            <Link href="/" className="text-base/tight font-semibold">
+            <NextLink href="/" className="text-base/tight font-semibold">
               Alex Morgan
-            </Link>
+            </NextLink>
             <div className="text-default-500 text-sm/tight">
               Product Designer
             </div>
@@ -112,14 +132,19 @@ export default function Home() {
         <Section
           heading="Projects"
           headerContent={
-            <Tabs selectedKey={activeCategory} onSelectionChange={(key) => setActiveCategory(key.toString())} size="sm" radius="full">
+            <Tabs
+              selectedKey={activeCategory}
+              onSelectionChange={(key) => setActiveCategory(key.toString())}
+              size="sm"
+              radius="full"
+            >
               <Tab key="all" title="All"></Tab>
               <Tab key="web" title="Web"></Tab>
               <Tab key="mobile" title="Mobile"></Tab>
             </Tabs>
           }
         >
-          <div className="-m-3 -mt-2 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+          <div className="-m-3 mt-0 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
             {filteredProjects.map((project, i) => {
               return (
                 <ProjectCard
@@ -130,6 +155,24 @@ export default function Home() {
                     onOpen();
                   }}
                 />
+              );
+            })}
+          </div>
+        </Section>
+        <Section heading="Writings">
+          <div className="-m-3 mt-0 flex flex-col gap-1">
+            {blogs.map((blog) => {
+              return (
+                <NextLink
+                  href="#"
+                  key={blog.slug}
+                  className="hover:bg-default-50 flex items-center justify-between rounded-lg p-3 transition-colors"
+                >
+                  <div className="text-sm">{blog.title}</div>
+                  <div className="text-default-500 text-sm">
+                    {dayjs(blog.date).format("MMM D, YYYY")}
+                  </div>
+                </NextLink>
               );
             })}
           </div>

@@ -12,6 +12,7 @@
   "dependencies": {
     "@heroui/react": "2.8.0-beta.4",
     "@icons-pack/react-simple-icons": "^12.8.0",
+    "dayjs": "^1.11.13",
     "framer-motion": "^12.11.3",
     "lucide-react": "^0.510.0",
     "next": "15.3.2",
