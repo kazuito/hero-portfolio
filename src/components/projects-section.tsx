@@ -33,7 +33,7 @@ const ProjectsSection = ({ onProjectSelected }: Props) => {
         </Tabs>
       }
     >
-      <div className="-m-3 mt-0 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+      <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3">
         {filteredProjects.map((project, i) => {
           return (
             <ProjectCard
