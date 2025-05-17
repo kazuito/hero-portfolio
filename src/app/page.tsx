@@ -73,7 +73,7 @@ export default function Home() {
       >
         <ModalContent className="m-0 h-[100dvh] max-h-none rounded-none shadow-none">
           {(close) => (
-            <ModalBody className="relative my-0 gap-0 p-0">
+            <ModalBody className="relative my-0 gap-0 p-0 no-scrollbar">
               <div className="backdrop-blu sticky top-4 z-20 mx-8 my-12 flex items-center justify-between rounded-2xl text-white mix-blend-difference">
                 <div className="text-base">{activeProject.title}</div>
                 <div>
