@@ -1,3 +1,6 @@
+import { Link } from "@heroui/react";
+import { Link2Icon } from "lucide-react";
+
 type Props = {
   heading: string;
   headerContent?: React.ReactNode;
@@ -5,10 +8,24 @@ type Props = {
 };
 
 const Section = ({ heading, headerContent, children }: Props) => {
+  const id = heading
+    .toLowerCase()
+    .replace(/\s/g, "_")
+  
   return (
-    <section className="my-20 flex flex-col gap-4">
+    <section id={id} className="my-20 flex flex-col gap-4">
       <div className="flex items-center justify-between">
-        <h2 className="">{heading}</h2>
+        <Link
+          href={`#${id}`}
+          className="flex items-center gap-2 group/link"
+          color="foreground"
+        >
+          {heading}
+          <Link2Icon
+            className="opacity-0 transition group-hover/link:opacity-100"
+            size={14}
+          />
+        </Link>
         {headerContent && headerContent}
       </div>
       {children}
