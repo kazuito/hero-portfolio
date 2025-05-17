@@ -2,6 +2,7 @@
 
 import AboutSection from "@/components/about-section";
 import ContactSection from "@/components/contact-section";
+import EmailButton from "@/components/email-button";
 import ExternalLink from "@/components/external-link";
 import Footer from "@/components/footer";
 import NewsletterSection from "@/components/newsletter-section";
@@ -37,18 +38,6 @@ export default function Home() {
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
   const activeProject = projects[activeProjectIndex];
 
-  const [emailCopied, setEmailCopied] = useState(false);
-
-  const copyEmail = () => {
-    if (emailCopied) return;
-    const email = "example@email.com";
-    navigator.clipboard.writeText(email);
-    setEmailCopied(true);
-    setTimeout(() => {
-      setEmailCopied(false);
-    }, 2000);
-  };
-
   return (
     <main>
       <div className="from-background/50 fixed top-0 z-20 h-12 w-full bg-gradient-to-b mask-b-to-100% backdrop-blur-[1px]"></div>
@@ -69,32 +58,7 @@ export default function Home() {
           <div className="ml-auto flex gap-4 text-sm">
             <ExternalLink href="#">X</ExternalLink>
             <ExternalLink href="#">GitHub</ExternalLink>
-            <button
-              className="group/btn flex cursor-pointer items-center gap-1.5 md:-mr-4"
-              onClick={copyEmail}
-            >
-              Email
-              <div
-                className={cn(
-                  "group-hover/btn:text-foreground text-default-400 opacity-100 transition-all group-hover/btn:opacity-100 sm:opacity-0",
-                  emailCopied && "!opacity-100",
-                )}
-              >
-                {emailCopied ? (
-                  <CheckIcon
-                    className={
-                      "transition-all duration-200 ease-out starting:scale-90 starting:-rotate-20 starting:opacity-0"
-                    }
-                    size={14}
-                  />
-                ) : (
-                  <CopyIcon
-                    className="transition-all duration-320 ease-out starting:rotate-10 starting:opacity-0"
-                    size={14}
-                  />
-                )}
-              </div>
-            </button>
+            <EmailButton />
           </div>
         </div>
         <AboutSection />
