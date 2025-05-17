@@ -6,12 +6,34 @@ import Footer from "@/components/footer";
 import ProjectCard from "@/components/project-card";
 import Section from "@/components/section";
 import { projects } from "@/lib/projects";
-import { Avatar, Button, cn, Input } from "@heroui/react";
-import { CheckIcon, CopyIcon } from "lucide-react";
+import {
+  Avatar,
+  Button,
+  cn,
+  Input,
+  Image,
+  Modal,
+  ModalBody,
+  ModalContent,
+  useDisclosure,
+  ButtonGroup,
+} from "@heroui/react";
+import {
+  ArrowLeftIcon,
+  ArrowRightIcon,
+  CheckIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  CopyIcon,
+} from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
 export default function Home() {
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const [activeProjectIndex, setActiveProjectIndex] = useState(0);
+  const activeProject = projects[activeProjectIndex];
+
   const [emailCopied, setEmailCopied] = useState(false);
 
   const copyEmail = () => {
@@ -83,7 +105,16 @@ export default function Home() {
         <Section heading="Projects">
           <div className="-m-3 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
             {projects.map((project, i) => {
-              return <ProjectCard project={project} key={i} />;
+              return (
+                <ProjectCard
+                  project={project}
+                  key={i}
+                  onClick={() => {
+                    setActiveProjectIndex(i);
+                    onOpen();
+                  }}
+                />
+              );
             })}
           </div>
         </Section>
@@ -113,6 +144,65 @@ export default function Home() {
         </div>
         <Footer />
       </div>
+      <Modal
+        scrollBehavior="inside"
+        isOpen={isOpen}
+        onOpenChange={onOpenChange}
+        size="3xl"
+      >
+        <ModalContent className="h-[90dvh] overflow-clip">
+          <ModalBody className="gap-0 p-0">
+            <div className="p-6 font-normal">
+              <div className="text-base">{activeProject.title}</div>
+              <div className="text-default-500 text-sm">
+                {activeProject.description}
+              </div>
+            </div>
+            <div className="flex flex-col gap-6">
+              {activeProject.images.map((image, index) => {
+                return (
+                  <Image
+                    key={index}
+                    src={image}
+                    className="w-full rounded-none"
+                    classNames={{
+                      wrapper: "shrink-0",
+                    }}
+                  />
+                );
+              })}
+            </div>
+            <div className="sticky bottom-0 z-20 flex justify-end p-2">
+              <div className="bg-background border-default-100 flex gap-1 rounded-xl border p-1 shadow">
+                <Button
+                  size="sm"
+                  isIconOnly
+                  variant="flat"
+                  isDisabled={activeProjectIndex === 0}
+                  onPress={() =>
+                    setActiveProjectIndex((prev) => Math.max(prev - 1, 0))
+                  }
+                >
+                  <ChevronLeftIcon size={16} />
+                </Button>
+                <Button
+                  size="sm"
+                  isIconOnly
+                  variant="flat"
+                  isDisabled={activeProjectIndex === projects.length - 1}
+                  onPress={() =>
+                    setActiveProjectIndex((prev) =>
+                      Math.min(prev + 1, projects.length - 1),
+                    )
+                  }
+                >
+                  <ChevronRightIcon size={16} />
+                </Button>
+              </div>
+            </div>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
     </main>
   );
 }
