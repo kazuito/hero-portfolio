@@ -11,7 +11,7 @@ type Props = {
 const ProjectCard = ({ project, onClick }: Props) => {
   return (
     <Card onClick={onClick} isPressable className="!transition-all">
-      <CardHeader className="h-40 w-full md:aspect-square p-2">
+      <CardHeader className="h-40 w-full p-2 md:aspect-square">
         <img
           src={project.images[0]}
           className="h-full w-full rounded-xl object-cover"

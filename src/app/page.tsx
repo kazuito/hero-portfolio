@@ -19,7 +19,7 @@ import {
   ModalHeader,
   useDisclosure,
 } from "@heroui/react";
-import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
+import { ChevronLeftIcon, ChevronRightIcon, XIcon } from "lucide-react";
 import NextLink from "next/link";
 import { useState } from "react";
 
@@ -70,17 +70,22 @@ export default function Home() {
         size="3xl"
         backdrop="transparent"
         className="!m-0"
+        hideCloseButton
       >
         <ModalContent className="m-0 h-[100dvh] max-h-none rounded-none shadow-none">
-          <ModalHeader className="p-0">
-            <div className="p-6 font-normal md:px-0">
+          <ModalBody className="relative my-0 gap-0 p-0">
+            <div className="backdrop-blu sticky top-4 z-20 mx-8 my-12 flex items-center justify-between rounded-2xl text-white mix-blend-difference">
               <div className="text-base">{activeProject.title}</div>
-              <div className="text-default-500 text-sm">
-                {activeProject.description}
+              <div>
+                <Button
+                  isIconOnly
+                  variant="bordered"
+                  className="text-background border-background/10"
+                >
+                  <XIcon size={16} />
+                </Button>
               </div>
             </div>
-          </ModalHeader>
-          <ModalBody className="relative my-0 gap-0 p-0">
             <div className="flex flex-col gap-0.5">
               {activeProject.images.map((image, index) => {
                 return (
