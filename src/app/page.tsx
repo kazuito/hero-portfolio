@@ -1,17 +1,20 @@
 "use client";
 
+import AboutSection from "@/components/about-section";
 import ContactSection from "@/components/contact-section";
 import ExternalLink from "@/components/external-link";
 import Footer from "@/components/footer";
+import NewsletterSection from "@/components/newsletter-section";
 import ProjectCard from "@/components/project-card";
+import ProjectsSection from "@/components/projects-section";
 import Section from "@/components/section";
+import WritingsSection from "@/components/writings-section";
 import { projects } from "@/lib/projects";
 import {
   Avatar,
   Button,
   cn,
   Image,
-  Input,
   Modal,
   ModalBody,
   ModalContent,
@@ -20,7 +23,6 @@ import {
   Tabs,
   useDisclosure,
 } from "@heroui/react";
-import dayjs from "dayjs";
 import {
   CheckIcon,
   ChevronLeftIcon,
@@ -28,38 +30,12 @@ import {
   CopyIcon,
 } from "lucide-react";
 import NextLink from "next/link";
-import { title } from "process";
 import { useState } from "react";
-
-const blogs = [
-  {
-    title: "Designing for Mobile First",
-    slug: "blog-3",
-    date: "2024-12-15",
-  },
-  {
-    title: "Building Accessible UIs",
-    slug: "blog-2",
-    date: "2025-4-8",
-  },
-  {
-    title: "Understanding Design Systems",
-    slug: "blog-1",
-    date: "2025-5-18",
-  },
-];
 
 export default function Home() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
   const activeProject = projects[activeProjectIndex];
-
-  const [activeCategory, setActiveCategory] = useState("all");
-  const filteredProjects = projects.filter(
-    (project) =>
-      activeCategory === "all" ||
-      project.category.toLowerCase() === activeCategory.toLowerCase(),
-  );
 
   const [emailCopied, setEmailCopied] = useState(false);
 
@@ -121,80 +97,15 @@ export default function Home() {
             </button>
           </div>
         </div>
-        <Section heading="About">
-          <p className="text-default-500">
-            Fuga sed numquam commodi animi quos corrupti. Tempora suscipit sequi
-            accusamus nulla veritatis ex vero. Est placeat quia temporibus in
-            sequi similique possimus. Suscipit quos illum. Commodi saepe
-            perferendis optio dolore. Nesciunt nihil sunt exercitationem veniam.
-          </p>
-        </Section>
-        <Section
-          heading="Projects"
-          headerContent={
-            <Tabs
-              selectedKey={activeCategory}
-              onSelectionChange={(key) => setActiveCategory(key.toString())}
-              size="sm"
-              radius="full"
-            >
-              <Tab key="all" title="All"></Tab>
-              <Tab key="web" title="Web"></Tab>
-              <Tab key="mobile" title="Mobile"></Tab>
-            </Tabs>
-          }
-        >
-          <div className="-m-3 mt-0 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
-            {filteredProjects.map((project, i) => {
-              return (
-                <ProjectCard
-                  project={project}
-                  key={project.title}
-                  onClick={() => {
-                    setActiveProjectIndex(i);
-                    onOpen();
-                  }}
-                />
-              );
-            })}
-          </div>
-        </Section>
-        <Section heading="Writings">
-          <div className="-m-3 mt-0 flex flex-col gap-1">
-            {blogs.map((blog) => {
-              return (
-                <NextLink
-                  href="#"
-                  key={blog.slug}
-                  className="hover:bg-default-50 flex items-center justify-between rounded-lg p-3 transition-colors"
-                >
-                  <div className="text-sm">{blog.title}</div>
-                  <div className="text-default-500 text-sm">
-                    {dayjs(blog.date).format("MMM D, YYYY")}
-                  </div>
-                </NextLink>
-              );
-            })}
-          </div>
-        </Section>
-        <Section heading="Newsletter">
-          <div className="">
-            <Input size="sm" label="Email" />
-            <div className="mt-4 flex items-center justify-end gap-4">
-              <p className="text-default-500 text-sm/tight">
-                My knowledge about product design, once a month. No spam.
-              </p>
-              <Button
-                size="sm"
-                color="primary"
-                variant="flat"
-                className="shrink-0"
-              >
-                Subscribe
-              </Button>
-            </div>
-          </div>
-        </Section>
+        <AboutSection />
+        <ProjectsSection
+          onProjectSelected={(i) => {
+            onOpen();
+            setActiveProjectIndex(i);
+          }}
+        />
+        <WritingsSection />
+        <NewsletterSection />
         <ContactSection />
         <Footer />
       </div>
