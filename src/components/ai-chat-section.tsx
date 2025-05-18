@@ -37,6 +37,15 @@ const AiChatSection = ({}: Props) => {
       role: "assistant",
       content: "My name is Alex Morgan.",
     },
+    {
+      role: "user",
+      content: "How old are you?",
+    },
+    {
+      role: "assistant",
+      content: "I am 25 years old.",
+    }
+
   ]);
 
   const scrollToBottom = () => {
