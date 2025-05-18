@@ -6,10 +6,15 @@ import { useState } from "react";
 const ContactSection = () => {
   const [sending, setSending] = useState(false);
 
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
   const handleSend = () => {
     setSending(true);
     setTimeout(() => {
       setSending(false);
+      setEmail("");
+      setMessage("");
       addToast({
         title: "Message sent successfully. Thank you!",
         color: "success",
@@ -26,8 +31,20 @@ const ContactSection = () => {
   return (
     <Section heading="Contact">
       <div className="flex flex-col gap-2">
-        <Input label="Email" size="sm" isDisabled={sending} />
-        <Textarea label="Message" size="sm" isDisabled={sending} />
+        <Input
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          label="Email"
+          size="sm"
+          isDisabled={sending}
+        />
+        <Textarea
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          label="Message"
+          size="sm"
+          isDisabled={sending}
+        />
         <div className="mt-2 flex items-center justify-end gap-4">
           <div className="text-default-500 flex gap-1.5 text-sm">
             Feel free to talk to me.
