@@ -77,7 +77,10 @@ const AiChatSection = () => {
 
   return (
     <Section heading="Ask AI">
-      <Card className="">
+      <p className="text-default-500">
+        An AI-powered chatbot trained on my personal information. Ask any question for instant, accurate answers about me.
+      </p>
+      <Card className="mt-2">
         <CardBody className="p-0">
           <ScrollShadow
             className="no-scrollbar mb-4 flex h-100 flex-col gap-6 scroll-smooth p-4"
