@@ -78,7 +78,8 @@ const AiChatSection = () => {
   return (
     <Section heading="Ask AI">
       <p className="text-default-500">
-        An AI-powered chatbot trained on my personal information. Ask any question for instant, accurate answers about me.
+        An AI-powered chatbot trained on my personal information. Ask any
+        question for instant, accurate answers about me.
       </p>
       <Card className="mt-2">
         <CardBody className="p-0">
@@ -99,7 +100,7 @@ const AiChatSection = () => {
                     className={cn(
                       "text-default-800 rounded-lg px-4 py-2 text-sm duration-320 starting:translate-y-4 starting:scale-99 starting:opacity-0 starting:blur-sm",
                       chat.role === "user"
-                        ? "bg-default-100 rounded-full max-w-2/3"
+                        ? "bg-default-100 max-w-2/3 rounded-full"
                         : "bg-transparent",
                     )}
                   >

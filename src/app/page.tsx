@@ -8,7 +8,7 @@ import Header from "@/components/header";
 import NewsletterSection from "@/components/newsletter-section";
 import ProjectsSection from "@/components/projects-section";
 import WritingsSection from "@/components/writings-section";
-import { Project, projects } from "@/lib/projects";
+import { Project } from "@/lib/projects";
 import {
   Button,
   Image,

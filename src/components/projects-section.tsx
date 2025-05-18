@@ -34,7 +34,7 @@ const ProjectsSection = ({ onProjectSelected }: Props) => {
       }
     >
       <div className="-mx-2 grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3">
-        {filteredProjects.map((project, i) => {
+        {filteredProjects.map((project) => {
           return (
             <ProjectCard
               project={project}
