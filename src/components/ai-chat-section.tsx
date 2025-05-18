@@ -146,7 +146,7 @@ const AiChatSection = () => {
             <Input
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Ask AI about me"
+              placeholder="Ask about Alex Morgan"
             />
             <Button
               type="submit"
