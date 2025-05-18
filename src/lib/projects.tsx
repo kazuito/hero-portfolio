@@ -7,46 +7,72 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: "White Rect Cap",
-    description: "A minimal design for real world product.",
-    images: ["./cap1.png", "./cap2.png"],
-    category: "Web",
-  },
-  {
-    title: "E-commerce Platform",
+    title: "Mindful AI Assistant",
     description:
-      "A full-featured online shopping experience with cart, payments, and user accounts.",
+      "AI companion for mental health tracking and mindfulness exercises.",
     images: [
-      "https://img.heroui.chat/image/ai?w=800&h=600&u=9",
-      "https://img.heroui.chat/image/ai?w=800&h=600&u=5",
+      "https://img.heroui.chat/image/ai?w=800&h=800&u=2",
+      "https://img.heroui.chat/image/ai?w=800&h=800&u=3",
+      "https://img.heroui.chat/image/ai?w=800&h=800&u=4",
+      "https://img.heroui.chat/image/ai?w=800&h=800&u=5",
+      "https://img.heroui.chat/image/ai?w=800&h=800&u=6",
+      "https://img.heroui.chat/image/ai?w=800&h=800&u=7",
+      "https://img.heroui.chat/image/ai?w=800&h=800&u=8",
     ],
     category: "Web",
   },
   {
-    title: "Mobile Fitness App",
+    title: "Finance Dashboard Pro",
     description:
-      "Track workouts, set goals, and monitor progress with this comprehensive fitness solution.",
+      "Interactive analytics dashboard with real-time data visualization.",
     images: [
-      "https://img.heroui.chat/image/ai?w=800&h=600&u=w",
-      "https://img.heroui.chat/image/ai?w=800&h=600&u=2",
-      "https://img.heroui.chat/image/ai?w=800&h=600&u=3",
+      "https://img.heroui.chat/image/dashboard?w=800&h=800&u=3",
+      "https://img.heroui.chat/image/dashboard?w=800&h=800&u=4",
+      "https://img.heroui.chat/image/dashboard?w=800&h=800&u=5",
+      "https://img.heroui.chat/image/dashboard?w=800&h=800&u=6",
+      "https://img.heroui.chat/image/dashboard?w=800&h=800&u=7",
+    ],
+    category: "Web",
+  },
+  {
+    title: "EcoTrack Mobile App",
+    description:
+      "App helping users reduce carbon footprint with personalized recommendations.",
+    images: [
+      "https://img.heroui.chat/image/ai?w=800&h=800&u=3",
+      "https://img.heroui.chat/image/ai?w=800&h=800&u=4",
+      "https://img.heroui.chat/image/ai?w=800&h=800&u=5",
+      "https://img.heroui.chat/image/ai?w=800&h=800&u=6",
+      "https://img.heroui.chat/image/ai?w=800&h=800&u=7",
+      "https://img.heroui.chat/image/ai?w=800&h=800&u=8",
+      "https://img.heroui.chat/image/ai?w=800&h=800&u=9",
     ],
     category: "Mobile",
   },
   {
-    title: "Data Visualization ai",
+    title: "Health Metrics Monitor",
     description:
-      "Interactive charts and graphs to present complex data in an accessible format.",
-    images: ["https://img.heroui.chat/image/ai?w=800&h=600&u=90"],
+      "Health tracker with fitness device integration and nutritional guidance.",
+    images: [
+      "https://img.heroui.chat/image/dashboard?w=800&h=800&u=4",
+      "https://img.heroui.chat/image/dashboard?w=800&h=800&u=5",
+      "https://img.heroui.chat/image/dashboard?w=800&h=800&u=6",
+      "https://img.heroui.chat/image/dashboard?w=800&h=800&u=7",
+      "https://img.heroui.chat/image/dashboard?w=800&h=800&u=8",
+      "https://img.heroui.chat/image/dashboard?w=800&h=800&u=9",
+      "https://img.heroui.chat/image/dashboard?w=800&h=800&u=10",
+    ],
     category: "Mobile",
   },
   {
-    title: "AI Image Generator",
+    title: "Creative Workspace",
     description:
-      "Uses machine learning algorithms to create unique images based on text prompts.",
+      "Collaboration platform for remote teams to organize projects and share assets.",
     images: [
-      "https://img.heroui.chat/image/ai?w=800&h=600&u=63",
-      "https://img.heroui.chat/image/ai?w=800&h=600&u=2",
+      "https://img.heroui.chat/image/ai?w=800&h=800&u=7",
+      "https://img.heroui.chat/image/ai?w=800&h=800&u=8",
+      "https://img.heroui.chat/image/ai?w=800&h=800&u=9",
+      "https://img.heroui.chat/image/ai?w=800&h=800&u=10",
     ],
     category: "Web",
   },

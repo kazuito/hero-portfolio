@@ -1,11 +1,11 @@
 import { Tabs, Tab } from "@heroui/react";
 import Section from "./section";
 import { useState } from "react";
-import { projects } from "@/lib/projects";
+import { Project, projects } from "@/lib/projects";
 import ProjectCard from "./project-card";
 
 type Props = {
-  onProjectSelected: (index: number) => void;
+  onProjectSelected: (project: Project) => void;
 };
 
 const ProjectsSection = ({ onProjectSelected }: Props) => {
@@ -39,7 +39,7 @@ const ProjectsSection = ({ onProjectSelected }: Props) => {
             <ProjectCard
               project={project}
               key={project.title}
-              onClick={() => onProjectSelected(i)}
+              onClick={() => onProjectSelected(project)}
             />
           );
         })}

@@ -8,7 +8,7 @@ import Header from "@/components/header";
 import NewsletterSection from "@/components/newsletter-section";
 import ProjectsSection from "@/components/projects-section";
 import WritingsSection from "@/components/writings-section";
-import { projects } from "@/lib/projects";
+import { Project, projects } from "@/lib/projects";
 import {
   Button,
   Image,
@@ -22,8 +22,7 @@ import { useState } from "react";
 
 export default function Home() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
-  const [activeProjectIndex, setActiveProjectIndex] = useState(0);
-  const activeProject = projects[activeProjectIndex];
+  const [activeProject, setActiveProject] = useState<Project | null>(null);
 
   return (
     <main>
@@ -32,9 +31,9 @@ export default function Home() {
         <Header />
         <AboutSection />
         <ProjectsSection
-          onProjectSelected={(i) => {
+          onProjectSelected={(project) => {
             onOpen();
-            setActiveProjectIndex(i);
+            setActiveProject(project);
           }}
         />
         <WritingsSection />
@@ -56,7 +55,7 @@ export default function Home() {
           {(close) => (
             <ModalBody className="no-scrollbar relative my-0 gap-0 p-0">
               <div className="backdrop-blu sticky top-4 z-20 mx-8 my-12 flex items-center justify-between rounded-2xl text-white mix-blend-difference">
-                <div className="text-base">{activeProject.title}</div>
+                <div className="text-base">{activeProject?.title}</div>
                 <div>
                   <Button
                     isIconOnly
@@ -69,7 +68,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex flex-col gap-0.5">
-                {activeProject.images.map((image, index) => {
+                {activeProject?.images.map((image, index) => {
                   return (
                     <Image
                       key={index}
