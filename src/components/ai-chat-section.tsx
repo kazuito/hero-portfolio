@@ -124,7 +124,7 @@ const AiChatSection = ({}: Props) => {
                 <DropdownItem
                   key="new"
                   startContent={<SquarePenIcon size={14} />}
-                  onClick={()=>setChats([])}
+                  onClick={() => setChats([])}
                 >
                   New chat
                 </DropdownItem>
@@ -142,7 +142,12 @@ const AiChatSection = ({}: Props) => {
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Ask AI about me"
             />
-            <Button type="submit" isIconOnly color="primary">
+            <Button
+              type="submit"
+              isIconOnly
+              color="primary"
+              isDisabled={thinking || !query.trim()}
+            >
               <SendHorizontalIcon size={14} />
             </Button>
           </form>
