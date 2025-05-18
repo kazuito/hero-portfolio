@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Hero Portfolio",
+  title: "Alex Morgan",
   description: "A portfolio built with HeroUI",
 };
 
