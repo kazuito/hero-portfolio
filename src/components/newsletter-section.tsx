@@ -39,6 +39,7 @@ const NewsletterSection = () => {
           isDisabled={sending}
           size="sm"
           label="Email"
+          autoComplete="off"
         />
         <div className="mt-4 flex items-center justify-end gap-4">
           <p className="text-default-500 text-sm/tight">

@@ -150,6 +150,7 @@ const AiChatSection = () => {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Ask about Alex Morgan"
+              autoComplete="off"
             />
             <Button
               type="submit"

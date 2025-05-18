@@ -37,6 +37,7 @@ const ContactSection = () => {
           label="Email"
           size="sm"
           isDisabled={sending}
+          autoComplete="off"
         />
         <Textarea
           value={message}
