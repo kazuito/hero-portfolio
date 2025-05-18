@@ -13,7 +13,7 @@ const Section = ({ heading, headerContent, children }: Props) => {
     .replace(/\s/g, "_")
   
   return (
-    <section id={id} className="my-20 flex flex-col gap-4">
+    <section id={id} className="my-20 flex flex-col gap-6">
       <div className="flex items-center justify-between">
         <Link
           href={`#${id}`}

@@ -9,7 +9,7 @@ const ExternalLink = ({ className, children, ...props }: Props) => {
     <Link
       as={NextLink}
       className={cn(
-        "group/link flex items-center gap-1 transition-colors",
+        "group/link inline-flex items-center gap-1 transition-colors",
         className,
       )}
       target="_blank"
