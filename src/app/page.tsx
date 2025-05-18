@@ -3,15 +3,13 @@
 import AboutSection from "@/components/about-section";
 import AiChatSection from "@/components/ai-chat-section";
 import ContactSection from "@/components/contact-section";
-import EmailButton from "@/components/email-button";
-import ExternalLink from "@/components/external-link";
 import Footer from "@/components/footer";
+import Header from "@/components/header";
 import NewsletterSection from "@/components/newsletter-section";
 import ProjectsSection from "@/components/projects-section";
 import WritingsSection from "@/components/writings-section";
 import { projects } from "@/lib/projects";
 import {
-  Avatar,
   Button,
   Image,
   Modal,
@@ -20,7 +18,6 @@ import {
   useDisclosure,
 } from "@heroui/react";
 import { XIcon } from "lucide-react";
-import NextLink from "next/link";
 import { useState } from "react";
 
 export default function Home() {
@@ -32,25 +29,7 @@ export default function Home() {
     <main>
       <div className="from-background/50 fixed top-0 z-20 h-12 w-full bg-gradient-to-b mask-b-to-100% backdrop-blur-[1px]"></div>
       <div className="mx-auto max-w-3xl px-6 py-12">
-        <div className="flex items-center gap-4 sm:gap-5">
-          <Avatar
-            src="https://img.heroui.chat/image/avatar?w=200&h=200&u=a"
-            className="size-10 sm:size-12"
-          />
-          <div>
-            <NextLink href="/" className="text-base/tight font-semibold">
-              Alex Morgan
-            </NextLink>
-            <div className="text-default-500 text-sm/tight">
-              Product Designer
-            </div>
-          </div>
-          <div className="ml-auto flex gap-4 text-sm">
-            <ExternalLink href="#">X</ExternalLink>
-            <ExternalLink href="#">GitHub</ExternalLink>
-            <EmailButton />
-          </div>
-        </div>
+        <Header />
         <AboutSection />
         <ProjectsSection
           onProjectSelected={(i) => {
