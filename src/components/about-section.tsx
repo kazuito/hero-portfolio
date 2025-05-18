@@ -14,9 +14,10 @@ const AboutSection = () => {
   return (
     <Section heading="About">
       <p className="text-default-500">
-        Product designer with 10+ years experience creating user-centered digital solutions.
-        I blend strategic thinking with meticulous design to build intuitive interfaces
-        that solve real problems while maintaining design excellence.
+        Product designer with 10+ years experience creating user-centered
+        digital solutions. I blend strategic thinking with meticulous design to
+        build intuitive interfaces that solve real problems while maintaining
+        design excellence.
       </p>
       <Table hideHeader className="mt-4">
         <TableHeader>
@@ -26,7 +27,8 @@ const AboutSection = () => {
         <TableBody>
           <TableRow>
             <TableCell>
-              2023 - <Chip size="sm" variant="dot" color="primary">
+              2023 -{" "}
+              <Chip size="sm" variant="dot" color="primary">
                 Present
               </Chip>
             </TableCell>

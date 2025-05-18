@@ -19,7 +19,7 @@ const ContactSection = () => {
           base: "bg-background border-none",
           icon: "text-primary",
         },
-    })
+      });
     }, 2000);
   };
 

@@ -32,15 +32,20 @@ const WritingsSection = () => {
             <NextLink
               href="#"
               key={article.slug}
-              className="hover:bg-default-50 flex items-center justify-between rounded-lg p-3 transition-colors gap-2"
+              className="hover:bg-default-50 flex items-center justify-between gap-2 rounded-lg p-3 transition-colors"
             >
-              <div className="text-sm truncate">{article.title}</div>
+              <div className="truncate text-sm">{article.title}</div>
               {isNew && (
-                <Chip className="shrink-0" size="sm" color="primary" variant="light">
+                <Chip
+                  className="shrink-0"
+                  size="sm"
+                  color="primary"
+                  variant="light"
+                >
                   New!
                 </Chip>
               )}
-              <div className="text-default-500 text-sm ml-auto shrink-0">
+              <div className="text-default-500 ml-auto shrink-0 text-sm">
                 {dayjs(article.date).format("MMM D, YYYY")}
               </div>
             </NextLink>

@@ -8,16 +8,14 @@ type Props = {
 };
 
 const Section = ({ heading, headerContent, children }: Props) => {
-  const id = heading
-    .toLowerCase()
-    .replace(/\s/g, "_")
-  
+  const id = heading.toLowerCase().replace(/\s/g, "_");
+
   return (
     <section id={id} className="my-20 flex flex-col gap-6">
       <div className="flex items-center justify-between">
         <Link
           href={`#${id}`}
-          className="flex items-center gap-2 group/link"
+          className="group/link flex items-center gap-2"
           color="foreground"
         >
           {heading}

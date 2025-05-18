@@ -21,9 +21,7 @@ import {
 import { useEffect, useRef, useState } from "react";
 import Section from "./section";
 
-type Props = {};
-
-const AiChatSection = ({}: Props) => {
+const AiChatSection = () => {
   const [query, setQuery] = useState("");
   const [thinking, setThinking] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -44,8 +42,7 @@ const AiChatSection = ({}: Props) => {
     {
       role: "assistant",
       content: "I am 25 years old.",
-    }
-
+    },
   ]);
 
   const scrollToBottom = () => {
