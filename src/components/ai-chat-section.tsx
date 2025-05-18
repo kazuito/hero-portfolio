@@ -97,9 +97,9 @@ const AiChatSection = () => {
                 >
                   <div
                     className={cn(
-                      "text-default-800 max-w-2/3 rounded-lg px-4 py-2 text-sm duration-320 starting:translate-y-4 starting:scale-99 starting:opacity-0 starting:blur-sm",
+                      "text-default-800 rounded-lg px-4 py-2 text-sm duration-320 starting:translate-y-4 starting:scale-99 starting:opacity-0 starting:blur-sm",
                       chat.role === "user"
-                        ? "bg-default-100 rounded-full"
+                        ? "bg-default-100 rounded-full max-w-2/3"
                         : "bg-transparent",
                     )}
                   >
