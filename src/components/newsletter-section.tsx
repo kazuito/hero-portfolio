@@ -1,7 +1,6 @@
 import { addToast, Button, Input, Spinner } from "@heroui/react";
 import Section from "./section";
 import { useState } from "react";
-import { ForwardIcon } from "lucide-react";
 
 const NewsletterSection = () => {
   const [sending, setSending] = useState(false);
