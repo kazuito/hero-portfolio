@@ -14,10 +14,9 @@ const AboutSection = () => {
   return (
     <Section heading="About">
       <p className="text-default-500">
-        Fuga sed numquam commodi animi quos corrupti. Tempora suscipit sequi
-        accusamus nulla veritatis ex vero. Est placeat quia temporibus in sequi
-        similique possimus. Suscipit quos illum. Commodi saepe perferendis optio
-        dolore. Nesciunt nihil sunt exercitationem veniam.
+        Product designer with 10+ years experience creating user-centered digital solutions.
+        I blend strategic thinking with meticulous design to build intuitive interfaces
+        that solve real problems while maintaining design excellence.
       </p>
       <Table hideHeader className="mt-4">
         <TableHeader>
